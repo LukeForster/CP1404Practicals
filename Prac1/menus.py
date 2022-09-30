@@ -1,0 +1,30 @@
+name = input('What is your name: ')
+print('What would you like to do: ')
+print('H = Hello')
+print('G = Goodbye')
+print('Q = Quit')
+
+choice = input('Enter Here: ').upper()
+while choice != 'Q':
+    if choice == 'H':
+        print('What would you like to do next: ')
+        print('H = Hello')
+        print('G = Goodbye')
+        print('Q = Quit')
+        choice = input('Enter Here: ').upper()
+    elif choice == 'G':
+        print('Goodbye', name)
+        print('What would you like to do next: ')
+        print('H = Hello')
+        print('G = Goodbye')
+        print('Q = Quit')
+        choice = input('Enter Here: ').upper()
+    else:
+        print('Invalid input, try again')
+        print('What would you like to do: ')
+        print('H = Hello')
+        print('G = Goodbye')
+        print('Q = Quit')
+        choice = input('Enter Here: ').upper()
+print('Quit program')
+quit()
