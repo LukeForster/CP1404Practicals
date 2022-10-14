@@ -9,7 +9,7 @@ while number_of_lines < 0:
     number_of_quick_picks = int(input("How many quick picks? "))
 
 
-for line in range(number_of_lines):
+for line_number in range(number_of_lines):
     quick_picks = []
     for numbers in range(numbers_per_line):
         number = random.randint(1, 45)
