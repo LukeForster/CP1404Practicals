@@ -1,10 +1,7 @@
 
-email_to_fullname = {}
-email = input('Email: ')
-
-
 def main():
-    global email
+    email_to_fullname = {}
+    email = input('Email: ')
     while email != '':
         fullname = get_fullname(email)
         # print(email)
