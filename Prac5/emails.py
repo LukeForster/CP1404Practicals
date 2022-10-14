@@ -6,9 +6,9 @@ def main():
         fullname = get_fullname(email)
         # print(email)
         # print(fullname)
-        confirmation = input(f"Is your name {fullname}? (Y/n) ")
-        if confirmation.upper() == "N" and confirmation != "":
-            fullname = input("Fullname: ")
+        confirmation = input(f'Is your name {fullname}? (Y/n) ')
+        if confirmation.upper() != 'Y' and confirmation != '':
+            fullname = input('Fullname: ')
         email_to_fullname[email] = fullname
         # print(email_to_fullname[email])
         # print(email_to_fullname)
