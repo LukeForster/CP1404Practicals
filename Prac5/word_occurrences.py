@@ -18,6 +18,7 @@ words = list(word_to_count.keys())
 words.sort()
 # print(words)
 # print(word)
+print(word_to_count)
 
 width = max(len(word) for word in words)
 for word in words:
