@@ -1,7 +1,7 @@
 """
 Word Occurrences
 Estimate: 20 minutes
-Actual:   32 minutes
+Actual:   40 minutes
 """
 
 user_sentence = input('Please enter a sentence:')
@@ -19,6 +19,6 @@ words.sort()
 # print(words)
 # print(word)
 
-max_length = max(len(word) for word in words)
+width = max(len(word) for word in words)
 for word in words:
-    print(f'{word:{max_length}} : {word_to_count[word]}')
+    print(f'{word:{width}} : {word_to_count[word]}')
