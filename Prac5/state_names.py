@@ -11,7 +11,8 @@ short_to_long_states = {"QLD": "Queensland",
                         "NT": "Northern Territory",
                         "WA": "Western Australia",
                         "ACT": "Australian Capital Territory",
-                        "VIC": "Victoria", "TAS": "Tasmania"}
+                        "VIC": "Victoria",
+                        "TAS": "Tasmania"}
 print(short_to_long_states)
 
 users_state = input("Enter short state: ").upper()
