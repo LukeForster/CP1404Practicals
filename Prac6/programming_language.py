@@ -1,4 +1,4 @@
-""" ETA: 20mins
+""" ETA: 20 mins
     Start Time: 5:19pm"""
 
 
@@ -20,10 +20,10 @@ class ProgrammingLanguage:
         #         return self.typing == 'Static'
         # except ValueError:
         #     print('Invalid input, True will be used')
-        return is_dynamic == 'Dynamic'
+        return self.typing == 'Dynamic'
 
     def __str__(self):
-        return f'{self.name}, {self.typing} Typing, Reflection={self.reflection}, First appeared in {self.year})
+        return f'{self.name}, {self.typing} Typing, Reflection={self.reflection}, First appeared in {self.year}'
 
 
 
