@@ -8,7 +8,10 @@ def add_guitar(name, year, cost, guitars):
     """Adds a guitar to the list, then checks if it is vintage and prints its details"""
     guitars.append(Guitar(name, year, cost))
     for i, guitar in enumerate(guitars, 1):
-        print(guitar)
+        vintage_string = ''
+        if guitar.is_vintage():
+            vintage_string = '(vintage)'
+        print(f"Guitar {i}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f}{vintage_string}")
 
 
 
