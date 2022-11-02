@@ -18,7 +18,12 @@ class Guitar:
         return current_year - self.year
 
     def is_vintage(self):
-        is_vintage = False
-        if self.get_age() >= 50:
-            is_vintage = True
-        return is_vintage
+        # is_vintage = False
+        # if self.get_age() >= 50:
+        #     is_vintage = True
+        # return is_vintage
+        return self.get_age() >= 50
+
+    def __lt__(self, other):
+        """Used so that the sort() function can be used in the guitars.py"""
+        return self.year < other.year
