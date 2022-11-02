@@ -1,5 +1,7 @@
-""" ETA: 20 mins
-    Start Time: 5:19pm"""
+""" ETA: 20 minutes
+    Start Time: 5:19pm
+    Finish Time 6:30pm
+    Total Time = 71 minutes"""
 
 
 class ProgrammingLanguage:
