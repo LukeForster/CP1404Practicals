@@ -5,7 +5,7 @@
 class ProgrammingLanguage:
     """Programming language Class"""
 
-    def __init__(self, typing, name, year, reflection):
+    def __init__(self, name, typing, reflection, year):
         self.typing = typing
         self.name = name
         self.year = year
@@ -23,7 +23,21 @@ class ProgrammingLanguage:
         return self.typing == 'Dynamic'
 
     def __str__(self):
-        return f'{self.name}, {self.typing} Typing, Reflection={self.reflection}, First appeared in {self.year}'
+        return f'{self.name}, {self.typing} Typing, Reflection = {self.reflection}, First appeared in {self.year}'
 
 
+def find_dynamic_languages():
+    python = ProgrammingLanguage("Python", "Dynamic", True, 1991)
+    ruby = ProgrammingLanguage("Ruby", "Dynamic", True, 1995)
+    visual_basic = ProgrammingLanguage("Visual Basic", "Static", False, 1991)
 
+    languages = [python, ruby, visual_basic]
+    # print(python)
+    print('The dynamically typed languages are:')
+    for language in languages:
+        if language.is_dynamic():
+            print(language.name)
+
+
+if __name__ == '__main__':
+    find_dynamic_languages()
