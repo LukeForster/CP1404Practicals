@@ -28,10 +28,12 @@ def main():
         reflection = parts[2] == "Yes"
         # Construct a ProgrammingLanguage object using the elements
         # year should be an int
-        language = ProgrammingLanguage(parts[0], parts[1], reflection, int(parts[3]))
+        pointerarithmetic = parts[4] == 'Yes'
+        language = ProgrammingLanguage(parts[0], parts[1], reflection, int(parts[3]), pointerarithmetic)
         # Add the language we've just constructed to the list
         languages.append(language)
     # Close the file as soon as we've finished reading it
+
     in_file.close()
 
     # Loop through and display all languages (using their str method)
