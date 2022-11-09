@@ -1,15 +1,26 @@
 from Prac7.project import Project
+import datetime
+
 
 def main():
     choice = get_choice()
+    projects = []
     while choice != 'Q':
         try:
             if choice == 'L':
-                projects = load_projects()  # If the user selected watch then the watch_movie function is called
+                projects = load_projects(projects)  # If the user selected watch then the watch_movie function is called
             elif choice == 'D':
-                display_movies(movies)  # If the user selected watch then the watch_movie function is called
+                display_projects(projects)
             elif choice == 'A':
-                add_movie(movies)  # If the user selected watch then the add_movie function is called
+                add_project(projects)  # If the user selected watch then the add_movie function is called
+                name = input('Name: ')
+                start_date = input('Start Date: ')
+                cost = float(input('Cost: '))
+
+            elif choice == 'U':
+
+                print(projects)
+
             else:
                 print('Invalid menu choice')  # If the user inputs anything other than the displayed options,
         except KeyError:  # or does not enter a string, an error message is printed.
@@ -17,32 +28,46 @@ def main():
         choice = get_choice()
 
 
+def display_projects(projects):
+    print(projects)
+    projects.sort()
+    for project in projects:
+        print(project)  # If the user selected watch then the watch_movie function is called
+
+
 def get_choice():
     """This function will display the and get the user's input"""
     print('Menu:')
     print('L - Load Projects')
     print('S - Save Projects')
+    print('D - Display Projects')
     print('A - Add Project')
+    print('F - Filter Project')
     print('Q - Quit')
     choice = input('What would you like to do: ').upper()
     return choice
 
 
-def load_projects():
+def load_projects(projects):
     """The function will load the projects from the .txt in_file into a nested list"""
     in_file = open('projects.txt', 'r')  # open the in_file to be read
-    projects = []
     for project in in_file:
         project = in_file.readline().split('\t')  # reads in_file's projects
         project[-1] = project[-1].strip()
+        # print(project)
+        project = Project(project[0], project[1], int(project[2]), float(project[3]), int(project[4]))
         print(project)
-        # project = Project(project[0], project[1], float(project[2]), project[3], project[4])
-        # print(guitar)
         projects.append(project)
     in_file.close()  # closes in_file
-    print(projects)
+    # print(projects)
     return projects
 
+
+def filter_projects(projects):
+    date_string = input("Date (d/m/yyyy): ")  # e.g., "30/9/2022"
+    date_req = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+    print(f"That day is/was {date_req.strftime('%A')}")
+    print(date_req.strftime("%d/%m/%Y"))
 
 
 main()

@@ -1,22 +1,22 @@
 ''' Time ETA: 30mins
     Start Time: 11:04pm
     Actual Time: '''
-
+from datetime import datetime
 class Project:
     """Project Class"""
-    import datetime
-    current_year = datetime.date.today().year
 
-    def __init__(self, name='', start_date='', priority=int(0), cost=float(0)):
+    def __init__(self, name='', start_date='', priority=int(0), cost=float(0), completion=int(0)):
         """Defines self variables"""
         self.name = name
         self.start_date = start_date
         self.priority = priority
         self.cost = cost
+        self.completion = completion
+        self.date = datetime.strptime(start_date, "%d/%m/%Y").date()
 
-    # def __str__(self):
-    #     """'f' string returned for the new guitars"""
-    #     return f'{self.name} ({self.year}) : {self.cost:,.2f}'
+    def __str__(self):
+        """'f' string returned for the new guitars"""
+        return f'{self.name} ({self.start_date}) : {self.cost:,.2f} {self.priority}, {self.completion}'
     #
     # def get_age(self):
     #     """Determines the age of the guitar"""
@@ -31,6 +31,6 @@ class Project:
     #     # return is_vintage
     #     return self.get_age() >= 50
     #
-    # def __lt__(self, other):
-    #     """Used so that the sort() function can be used"""
-    #     return self.year < other.year
+    def __lt__(self, other):
+        """Used so that the sort() function can be used"""
+        return self.date < other.date
