@@ -34,3 +34,7 @@ class Guitar:
     def __lt__(self, other):
         """Used so that the sort() function can be used"""
         return self.year < other.year
+
+
+    # def __iter__(self):
+    #     pass
