@@ -9,24 +9,59 @@ def main():
         try:
             if choice == 'L':
                 projects = load_projects(projects)  # If the user selected watch then the watch_movie function is called
+            elif choice == 'S':
+                print('save')
             elif choice == 'D':
                 display_projects(projects)
             elif choice == 'A':
-                add_project(projects)  # If the user selected watch then the add_movie function is called
-                name = input('Name: ')
-                start_date = input('Start Date: ')
-                cost = float(input('Cost: '))
-
+                add_project(projects)# If the user selected watch then the add_movie function is called
             elif choice == 'U':
-
-                print(projects)
-
+                update_project(projects)
+                print('u')
             else:
                 print('Invalid menu choice')  # If the user inputs anything other than the displayed options,
         except KeyError:  # or does not enter a string, an error message is printed.
             print('Invalid menu choice')
         choice = get_choice()
 
+
+def update_project(projects):
+    project_name = input('Name of Project: ')
+    for project in projects:
+        print('f')
+        if project_name == project.name:
+            updating_choice = input('Priority and/or Completion Pecentage (P/C): ').upper()
+            while updating_choice != '':
+                if updating_choice == 'P':
+                    priority = int(input('New Priority: '))
+                    project.priority = priority
+                    print(project.priority)
+                    # project[2] = project.priority = priority
+                    updating_choice = input('Priority and/or Completion Pecentage (P/C): ').upper()
+                elif updating_choice == 'C':
+                    completion_percentage = int(input('New Percentage: '))
+                    project[3] = project.completion = completion_percentage
+                    updating_choice = input('Priority and/or Completion Pecentage (P/C): ').upper()
+                else:
+                    print('Invalid')
+        else:
+            print('Invalid Project')
+
+
+def add_project(projects):
+    project = []
+    name = input('Name: ')
+    start_date = input('Start Date: ')
+    priority = int(input('Priority Level: '))
+    cost = float(input('Cost: '))
+    completion_percentage = int(input('Completion Percentage: '))
+    project.append(name)
+    project.append(start_date)
+    project.append(priority)
+    project.append(cost)
+    project.append(completion_percentage)
+    projects.append(project)
+    return projects
 
 def display_projects(projects):
     print(projects)
@@ -43,6 +78,7 @@ def get_choice():
     print('D - Display Projects')
     print('A - Add Project')
     print('F - Filter Project')
+    print('U - Update Project')
     print('Q - Quit')
     choice = input('What would you like to do: ').upper()
     return choice
