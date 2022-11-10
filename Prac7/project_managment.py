@@ -9,8 +9,13 @@ def main():
         try:
             if choice == 'L':
                 projects = load_projects(projects)  # If the user selected watch then the watch_movie function is called
-            elif choice == 'S':
-                print('save')
+            # elif choice == 'S':
+                # # print('save')
+                # with open('project1.txt', 'w', newline='') as out_file:  # Re-opens the movies.csv so that it can be updated
+                #     print(projects)
+                #     for project in projects:
+                #
+                # out_file.close()  # closes in_file
             elif choice == 'D':
                 display_projects(projects)
             elif choice == 'A':
@@ -30,20 +35,19 @@ def update_project(projects):
     for project in projects:
         print('f')
         if project_name == project.name:
-            updating_choice = input('Priority and/or Completion Pecentage (P/C): ').upper()
+            updating_choice = input('Priority and/or Completion Percentage (P/C): ').upper()
             while updating_choice != '':
                 if updating_choice == 'P':
                     priority = int(input('New Priority: '))
                     project.priority = priority
                     print(project.priority)
                     # project[2] = project.priority = priority
-                    updating_choice = input('Priority and/or Completion Pecentage (P/C): ').upper()
                 elif updating_choice == 'C':
                     completion_percentage = int(input('New Percentage: '))
                     project[3] = project.completion = completion_percentage
-                    updating_choice = input('Priority and/or Completion Pecentage (P/C): ').upper()
                 else:
                     print('Invalid')
+                updating_choice = input('Priority and/or Completion Pecentage (P/C): ').upper()
         else:
             print('Invalid Project')
 
