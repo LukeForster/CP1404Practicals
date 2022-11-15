@@ -5,6 +5,9 @@ current_year = datetime.date.today().year
 
 class Guitar:
     """Guitar Class"""
+    import datetime
+    current_year = datetime.date.today().year
+
     def __init__(self, name='', year=0, cost=float(0)):
         """Defines self variables"""
         self.name = name
@@ -29,5 +32,9 @@ class Guitar:
         return self.get_age() >= 50
 
     def __lt__(self, other):
-        """Used so that the sort() function can be used in the guitars.py"""
+        """Used so that the sort() function can be used"""
         return self.year < other.year
+
+
+    # def __iter__(self):
+    #     pass
