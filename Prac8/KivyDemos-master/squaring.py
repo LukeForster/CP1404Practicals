@@ -25,9 +25,12 @@ class SquareNumberApp(App):
         """ handle calculation (could be button press or other call), output result to label widget """
         try:
             result = float(value) ** 2
-            self.root.ids.output_label.text = str(result)
+            self.display_squared_number(result)
         except ValueError:
             pass
+
+    def display_squared_number(self, result):
+        self.root.ids.output_label.text = str(result)
 
 
 SquareNumberApp().run()
