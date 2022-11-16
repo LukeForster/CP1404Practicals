@@ -20,7 +20,7 @@ class MilesConverterApp(App):
 
     def handle_increments(self, change):
         """Increases the inputted miles by 1 or -1, then calculates the kilometres"""
-        value = self.get_valid_miles()
+        value = self.get_valid_miles() + change
         self.root.ids.input_miles.text = str(value)
         self.handle_calculations()
 
