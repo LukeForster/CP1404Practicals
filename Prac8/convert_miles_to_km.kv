@@ -4,17 +4,22 @@ BoxLayout
         orientation: 'horizontal'
         TextInput
             id: input_miles
-            text: 'Miles'
+            text: '3'
             font_size: 40
         BoxLayout:
             orientation: 'vertical'
             Button:
                 text: 'Up'
+                on_press: app.handle_increments(1)
             Button:
                 text: 'Down'
+                on_press: app.handle_increments(-1)
+    Button:
+        text: 'Convert Miles to Kilometres'
+        on_press: app.handle_calculations()
     Label:
         id: output_label
         font_size: 30
-        text: 'Kilometres'
+        text: ''
         color: (1, 1, 0, 1)
 
