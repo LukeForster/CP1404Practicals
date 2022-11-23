@@ -21,6 +21,8 @@ class Band:
 
     def play(self):
         """Return a string showing the instrument playing their first (or no) instrument."""
-        if not self.musicians:
-            return f"{self.name} needs an instrument!"
-        return f"{self.name} is playing: {self.musicians[0]}"
+        for musician in self.musicians:
+            if not musician.instruments:
+                print(f"{musician.name} needs an instrument!")
+            else:
+                print(f"{musician.name} is playing: {musician.instruments}")
