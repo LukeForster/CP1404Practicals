@@ -56,11 +56,6 @@ def run_tests():
     assert sentence == 'Roh roh raggy.'
 
 
-
-
-
-
-
 # 4. Fixed the failing is_long_word function
 # (don't change the tests, change the function!)
 
@@ -75,9 +70,10 @@ def phrase_to_sentence(phrase):
     test this and watch the tests fail
     then write the body of the function so that the tests pass"""
     sentence = phrase.capitalize()
-    if sentence [-1] != '.':
+    if sentence[-1] != '.':
         sentence += '.'
     return sentence
+
 
 run_tests()
 
