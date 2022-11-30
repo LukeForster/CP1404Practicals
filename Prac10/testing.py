@@ -52,6 +52,9 @@ def run_tests():
     test_car = Car()
     assert test_car.fuel == 0
 
+    sentence = phrase_to_sentence('roh roh raggy')
+    assert sentence == 'Roh roh raggy.'
+
 
 
 
